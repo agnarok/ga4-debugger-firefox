@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <div id="toolbar">
+    <button id="btn-clear" class="tb-btn" title="Clear all captured events">⊘ Clear</button>
+
+    <label class="toggle-label" title="Expand every event's details by default">
+      <input type="checkbox" id="toggle-expand">
+      <span>Expand</span>
+    </label>
+
+    <span class="tb-sep"></span>
+
+    <fieldset id="type-filters">
+      <legend>Event Type</legend>
+      <label class="type-chk" data-type="custom"><input type="checkbox" checked><span class="dot dot-custom"></span>Custom</label>
+      <label class="type-chk" data-type="pageview"><input type="checkbox" checked><span class="dot dot-pageview"></span>Pageview</label>
+      <label class="type-chk" data-type="automatic"><input type="checkbox" checked><span class="dot dot-automatic"></span>Automatic</label>
+      <label class="type-chk" data-type="ecommerce"><input type="checkbox" checked><span class="dot dot-ecommerce"></span>Ecommerce</label>
+      <label class="type-chk" data-type="recommended"><input type="checkbox" checked><span class="dot dot-recommended"></span>Recommended</label>
+    </fieldset>
+
+    <input type="search" id="name-filter" placeholder="Filter by event name…">
+
+    <span class="tb-sep"></span>
+
+    <label class="toggle-label" title="Route events to GA4 Admin DebugView">
+      <input type="checkbox" id="toggle-debug-mode">
+      <span>Debug Mode</span>
+    </label>
+    <label class="toggle-label" title="Block GA4 requests — keeps production data clean during testing">
+      <input type="checkbox" id="toggle-test-mode">
+      <span>Test Mode</span>
+    </label>
+
+    <span id="status" title="Click to dump non-GA4 collect URLs">listening · 0 collect · 0 GA4</span>
+    <span id="event-count">0 events</span>
+  </div>
+
+  <div id="event-list"></div>
+
+  <div id="empty-state">
+    <div class="empty-icon">📶</div>
+    No GA4 events captured yet.<br>
+    Interact with a page that uses GA4 — or reload it with this panel open.
+  </div>
+
+  <script src="panel.js"></script>
+</body>
+</html>

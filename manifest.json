@@ -6,7 +6,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "ga4-debugger@firefox",
-      "strict_min_version": "86.0"
+      "strict_min_version": "86.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   },
   "icons": {
